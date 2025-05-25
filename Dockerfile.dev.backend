@@ -1,0 +1,19 @@
+FROM golang:1.23.1
+
+WORKDIR /app
+
+# Install development tools
+RUN apt-get update && apt-get install -y \
+    postgresql-client \
+    redis-tools \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set environment for development
+ENV GO111MODULE=on
+ENV ENVIRONMENT=development
+ENV DEVLOCAL_AUTH=true
+ENV APPLICATION=app
+
+# Basic run command
+CMD ["go", "run", "./cmd/milmove/main.go", "serve"]

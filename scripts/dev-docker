@@ -1,0 +1,37 @@
+#!/bin/bash
+set -eu -o pipefail
+
+# Parse arguments
+COMMAND=${1:-"up"}
+
+case "$COMMAND" in
+  up)
+    echo "Starting development environment..."
+    docker-compose -f docker-compose.dev.yml up -d
+    echo "🚀 Development environment is running!"
+    echo "📱 Frontend: http://localhost:3000"
+    echo "🔌 Backend API: http://localhost:8080"
+    echo "📊 Feature Flags: http://localhost:8181"
+    ;;
+  down)
+    echo "Stopping development environment..."
+    docker-compose -f docker-compose.dev.yml down
+    ;;
+  logs)
+    docker-compose -f docker-compose.dev.yml logs -f ${2:-}
+    ;;
+  migrate)
+    echo "Running database migrations..."
+    docker-compose -f docker-compose.dev.yml exec backend make db_dev_migrate
+    ;;
+  reset)
+    echo "Resetting development environment..."
+    docker-compose -f docker-compose.dev.yml down -v
+    docker-compose -f docker-compose.dev.yml up -d
+    ;;
+  *)
+    echo "Unknown command: $COMMAND"
+    echo "Available commands: up, down, logs, migrate, reset"
+    exit 1
+    ;;
+esac

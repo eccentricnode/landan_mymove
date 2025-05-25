@@ -1,0 +1,105 @@
+version: '3.8'
+
+services:
+  database:
+    image: postgres:14
+    environment:
+      - POSTGRES_PASSWORD=mysecretpassword
+      - POSTGRES_DB=dev_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:6
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev.backend
+    depends_on:
+      database:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+      - go-pkg:/go/pkg
+      - go-cache:/root/.cache/go-build
+    environment:
+      - DB_HOST=database
+      - DB_PORT=5432
+      - DB_NAME=dev_db
+      - DB_USER=postgres
+      - DB_PASSWORD=mysecretpassword
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - DEVLOCAL_AUTH=true
+      - SERVE_SWAGGER_UI=true
+      - FEATURE_FLAG_MULTI_MOVE=true
+      - FEATURE_FLAG_ENABLE_ALASKA=true
+      - FEATURE_FLAG_MANAGE_SUPPORTING_DOCS=true
+      - FEATURE_FLAG_COUNSELOR_MOVE_CREATE=true
+      - FEATURE_FLAG_GSR_ROLE=true
+      - FEATURE_FLAG_COMPLETE_PPM_CLOSEOUT_FOR_CUSTOMER=true
+      - HERE_MAPS_GEOCODE_ENDPOINT=https://geocoder.api.here.com/6.2/geocode.json
+      - HERE_MAPS_ROUTING_ENDPOINT=https://route.api.here.com/routing/7.2/calculateroute.json
+      - HERE_MAPS_APP_ID=devlocal
+      - HERE_MAPS_APP_CODE=devlocal
+      - LOGGING_LEVEL=debug
+
+  # frontend:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.dev.frontend
+  #   ports:
+  #     - "3000:3000"
+  #   volumes:
+  #     - .:/app
+  #     - node_modules:/app/node_modules
+  #   environment:
+  #     - NODE_ENV=development
+  #     - REACT_APP_NODE_ENV=development
+  #     - REACT_APP_GIT_BRANCH=development
+  #     - REACT_APP_GIT_COMMIT=development
+  #     - REACT_APP_ERROR_LOGGING=console
+  #     - FEATURE_FLAG_MULTI_MOVE=true
+  #     - FEATURE_FLAG_ENABLE_ALASKA=true
+  #     - FEATURE_FLAG_MANAGE_SUPPORTING_DOCS=true
+  #     - FEATURE_FLAG_COUNSELOR_MOVE_CREATE=true
+  #     - FEATURE_FLAG_GSR_ROLE=true
+  #     - FEATURE_FLAG_COMPLETE_PPM_CLOSEOUT_FOR_CUSTOMER=true
+  #   depends_on:
+  #     - backend
+
+  flipt:
+    image: flipt/flipt:latest
+    ports:
+      - "8181:8181"
+    volumes:
+      - flipt-data:/var/opt/flipt
+
+volumes:
+  postgres-data:
+  redis-data:
+  node_modules:
+  go-pkg:
+  go-cache:
+  flipt-data:
