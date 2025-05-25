@@ -1,6 +1,6 @@
 module github.com/transcom/mymove
 
-go 1.23
+go 1.23.0
 
 // Temporary workaroudn to mockery alias generation issue with go 1.23
 // found at https://github.com/vektra/mockery/issues/803
@@ -69,7 +69,7 @@ require (
 	github.com/pkg/sftp v1.13.7
 	github.com/pterm/pterm v0.12.79
 	github.com/rickar/cal/v2 v2.1.13
-	github.com/spf13/afero v1.11.0
+	github.com/spf13/afero v1.14.0
 	github.com/spf13/cobra v1.8.0
 	github.com/spf13/pflag v1.0.5
 	github.com/spf13/viper v1.18.2
@@ -100,7 +100,7 @@ require (
 	golang.org/x/crypto v0.31.0
 	golang.org/x/net v0.29.0
 	golang.org/x/oauth2 v0.23.0
-	golang.org/x/text v0.22.0
+	golang.org/x/text v0.23.0
 	golang.org/x/tools v0.24.0
 	google.golang.org/grpc v1.68.0
 	gopkg.in/dnaeon/go-vcr.v3 v3.2.0
@@ -263,7 +263,7 @@ require (
 	golang.org/x/exp v0.0.0-20230905200255-921286631fa9
 	golang.org/x/image v0.24.0 // indirect
 	golang.org/x/mod v0.20.0 // indirect
-	golang.org/x/sync v0.11.0 // indirect
+	golang.org/x/sync v0.12.0 // indirect
 	golang.org/x/sys v0.28.0 // indirect
 	golang.org/x/term v0.27.0 // indirect
 	google.golang.org/genproto v0.0.0-20240401170217-c3f982113cda
