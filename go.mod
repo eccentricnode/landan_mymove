@@ -7,7 +7,7 @@ go 1.23
 godebug gotypesalias=0
 
 require (
-	github.com/DATA-DOG/go-txdb v0.1.7
+	github.com/DATA-DOG/go-txdb v0.2.1
 	github.com/XSAM/otelsql v0.23.0
 	github.com/alexedwards/scs/redisstore v0.0.0-20221223131519-238b052508b6
 	github.com/alexedwards/scs/v2 v2.8.0
