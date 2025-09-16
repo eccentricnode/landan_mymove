@@ -3392,14 +3392,12 @@
     react-lifecycles-compat "^3.0.4"
     react-select "^5.7.0"
 
-"@storybook/addon-links@^8.1.3":
-  version "8.1.3"
-  resolved "https://registry.npmjs.org/@storybook/addon-links/-/addon-links-8.1.3.tgz"
-  integrity sha512-WwXrSDmtpjDJvUMMKbQSio7w5yVu51Gndamf/EkkRXGMauBAm7rW5M/S1Rky3ZPhHt9a6ByI51GpGMDrNFLoRQ==
+"@storybook/addon-links@^9.1.6":
+  version "9.1.6"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-9.1.6.tgz#fb1bb96eb73202d411138c47b383e3bec4ebbf46"
+  integrity sha512-TY9d3MVylNHNQswlwsvXMaGNZXGaEr8RMvV9BES65BC4GAPnHM6W1I9mEf1ckg+uSFBf43ZMOsYulSMo86ddpQ==
   dependencies:
-    "@storybook/csf" "^0.1.7"
     "@storybook/global" "^5.0.0"
-    ts-dedent "^2.0.0"
 
 "@storybook/addon-measure@7.2.0":
   version "7.2.0"
