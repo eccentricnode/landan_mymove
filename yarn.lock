@@ -4546,6 +4546,11 @@
   resolved "https://registry.npmjs.org/@tanstack/query-core/-/query-core-4.36.1.tgz"
   integrity sha512-DJSilV5+ytBP1FbFcEJovv4rnnm/CokuVvrBEtW/Va9DvuJ3HksbXUJEpI0aV1KtuL4ZoO9AVE6PyNLzF7tLeA==
 
+"@tanstack/query-core@5.90.2":
+  version "5.90.2"
+  resolved "https://registry.yarnpkg.com/@tanstack/query-core/-/query-core-5.90.2.tgz#ac5d0d0f19a38071db2d21d758b5c35a85d9c1d8"
+  integrity sha512-k/TcR3YalnzibscALLwxeiLUub6jN5EDLwKDiO7q5f4ICEoptJ+n9+7vcEFy5/x/i6Q+Lb/tXrsKCggf5uQJXQ==
+
 "@tanstack/query-devtools@5.17.7":
   version "5.17.7"
   resolved "https://registry.npmjs.org/@tanstack/query-devtools/-/query-devtools-5.17.7.tgz"
@@ -4565,6 +4570,13 @@
   dependencies:
     "@tanstack/query-core" "4.36.1"
     use-sync-external-store "^1.2.0"
+
+"@tanstack/react-query@^5.83.0":
+  version "5.90.2"
+  resolved "https://registry.yarnpkg.com/@tanstack/react-query/-/react-query-5.90.2.tgz#2f045931b7d44bef02c5261fedba75ef1a418726"
+  integrity sha512-CLABiR+h5PYfOWr/z+vWFt5VsOA2ekQeRQBFSKlcoW6Ndx/f8rfyVmq4LbgOM4GG2qtxAxjLYLOpCNTYm4uKzw==
+  dependencies:
+    "@tanstack/query-core" "5.90.2"
 
 "@testing-library/dom@>=7", "@testing-library/dom@^9.0.0":
   version "9.3.4"
@@ -7739,6 +7751,11 @@ date-fns@^2.19.0:
   resolved "https://registry.npmjs.org/date-fns/-/date-fns-2.28.0.tgz"
   integrity sha512-8d35hViGYx/QH0icHYCeLmsLmMUheMmTyV9Fcm6gvNwdw31yXXH+O85sOBJ+OLnLQMKZowvpKb6FgMIQjcpvQw==
 
+date-fns@^3.6.0:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-3.6.0.tgz#f20ca4fe94f8b754951b24240676e8618c0206bf"
+  integrity sha512-fRHTG8g/Gif+kSh50gaGEdToemgfj74aRX3swtiouboip5JDLAyDE9F11nHMIcvOaXeOC6D7SpNhi7uFyB7Uww==
+
 debug@2.6.9, debug@^2.6.0, debug@^2.6.9:
   version "2.6.9"
   resolved "https://registry.npmjs.org/debug/-/debug-2.6.9.tgz"
@@ -9058,6 +9075,11 @@ eventemitter3@^4.0.0, eventemitter3@^4.0.7:
   version "4.0.7"
   resolved "https://registry.npmjs.org/eventemitter3/-/eventemitter3-4.0.7.tgz"
   integrity sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==
+
+eventemitter3@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-5.0.1.tgz#53f5ffd0a492ac800721bb42c66b841de96423c4"
+  integrity sha512-GWkBvjiSZK87ELrYOSESUYeVIc9mvLLf/nXalMOS5dYrgZq9o5OVkbZAVM06CVxYsCwH9BDZFPlQTlPA1j4ahA==
 
 events@^3.2.0:
   version "3.3.0"
@@ -10501,6 +10523,11 @@ indexof@0.0.1:
   version "0.0.1"
   resolved "https://registry.npmjs.org/indexof/-/indexof-0.0.1.tgz"
   integrity sha1-gtwzbSMrkGIXnQWrMpOmYFn9Q10=
+
+inflection@^3.0.0:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/inflection/-/inflection-3.0.2.tgz#2f591c3dad053e3fac65a03bf6431b675d829601"
+  integrity sha512-+Bg3+kg+J6JUWn8J6bzFmOWkTQ6L/NHfDRSYU+EVvuKHDxUDHAXgqixHfVlzuBQaPOTac8hn43aPhMNk6rMe3g==
 
 inflection@~1.12.0:
   version "1.12.0"
@@ -14720,7 +14747,7 @@ qs@6.13.0, qs@^6.10.0, qs@^6.10.1, qs@^6.10.2, qs@^6.11.0, qs@^6.11.1:
   dependencies:
     side-channel "^1.0.6"
 
-query-string@7, query-string@^7.0.0, query-string@^7.1.1:
+query-string@7, query-string@^7.0.0, query-string@^7.1.1, query-string@^7.1.3:
   version "7.1.3"
   resolved "https://registry.npmjs.org/query-string/-/query-string-7.1.3.tgz"
   integrity sha512-hh2WYhq4fi8+b+/2Kg9CEge4fDPvHS534aOOvOZeQ3+Vf2mCFsaFBYj0i+iXcAq6I9Vzp5fjMFBlONvayDC1qg==
@@ -14766,6 +14793,21 @@ ra-core@^4.12.2, ra-core@^4.16.15:
     react-is "^17.0.2"
     react-query "^3.32.1"
 
+ra-core@^5.12.0:
+  version "5.12.0"
+  resolved "https://registry.yarnpkg.com/ra-core/-/ra-core-5.12.0.tgz#c0845c74504870ca6afc0e124e7a3da8e2c87e29"
+  integrity sha512-r3hjGtCH2Br4V/lkkVINMHOqV3+dvVAX/DSuzrLJrdpwaoxgGcfxlbCqR+0B7tweeJiE+MDeUXozUkCFKl8D7g==
+  dependencies:
+    "@tanstack/react-query" "^5.83.0"
+    date-fns "^3.6.0"
+    eventemitter3 "^5.0.1"
+    inflection "^3.0.0"
+    jsonexport "^3.2.0"
+    lodash "^4.17.21"
+    query-string "^7.1.3"
+    react-error-boundary "^4.0.13"
+    react-is "^18.2.0 || ^19.0.0"
+
 ra-i18n-polyglot@^4.12.2:
   version "4.12.2"
   resolved "https://registry.npmjs.org/ra-i18n-polyglot/-/ra-i18n-polyglot-4.12.2.tgz"
@@ -14774,12 +14816,19 @@ ra-i18n-polyglot@^4.12.2:
     node-polyglot "^2.2.2"
     ra-core "^4.12.2"
 
-ra-language-english@^4.12.2, ra-language-english@^4.16.15:
+ra-language-english@^4.12.2:
   version "4.16.15"
   resolved "https://registry.npmjs.org/ra-language-english/-/ra-language-english-4.16.15.tgz"
   integrity sha512-eMaEMOstlqDtcpwBFc8w1JXQ3a0BKt8whji7Ef0X5KSUYoSl1z6HZsOLILzDojW8BbgGPGFGRi+X3XUb/Z1Zbw==
   dependencies:
     ra-core "^4.16.15"
+
+ra-language-english@^5.12.0:
+  version "5.12.0"
+  resolved "https://registry.yarnpkg.com/ra-language-english/-/ra-language-english-5.12.0.tgz#12e2063cfce1d1e07f12ce9c29c3844d3a0480c6"
+  integrity sha512-T1Vnw1GQdG5w6u04Ei5nc75GX7VV2EYpLCuvkwfomadPlsrZ14n2mpPhguanESU7ND30B5cxbteZh8v9H6NLfA==
+  dependencies:
+    ra-core "^5.12.0"
 
 ra-ui-materialui@^4.12.3:
   version "4.12.3"
@@ -15018,6 +15067,13 @@ react-error-boundary@^3.1.0, react-error-boundary@^3.1.4:
   dependencies:
     "@babel/runtime" "^7.12.5"
 
+react-error-boundary@^4.0.13:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/react-error-boundary/-/react-error-boundary-4.1.2.tgz#bc750ad962edb8b135d6ae922c046051eb58f289"
+  integrity sha512-GQDxZ5Jd+Aq/qUxbCm1UtzmL/s++V7zKgE8yMktJiCQXCCFZnMZh9ng+6/Ne6PjNSXH0L9CjeOEREfRnq6Duag==
+  dependencies:
+    "@babel/runtime" "^7.12.5"
+
 react-error-overlay@^6.0.11:
   version "6.0.11"
   resolved "https://registry.npmjs.org/react-error-overlay/-/react-error-overlay-6.0.11.tgz"
@@ -15080,6 +15136,11 @@ react-is@^18.0.0, react-is@^18.2.0, react-is@^18.3.1:
   version "18.3.1"
   resolved "https://registry.npmjs.org/react-is/-/react-is-18.3.1.tgz"
   integrity sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==
+
+"react-is@^18.2.0 || ^19.0.0":
+  version "19.2.0"
+  resolved "https://registry.yarnpkg.com/react-is/-/react-is-19.2.0.tgz#ddc3b4a4e0f3336c3847f18b806506388d7b9973"
+  integrity sha512-x3Ax3kNSMIIkyVYhWPyO09bu0uttcAIoecO/um/rKGQ4EltYWVYtyiGkS/3xMynrbVQdS69Jhlv8FXUEZehlzA==
 
 react-lifecycles-compat@^3.0.4:
   version "3.0.4"
